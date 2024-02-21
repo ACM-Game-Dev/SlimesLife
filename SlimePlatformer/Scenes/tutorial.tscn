@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6audiapxabd7"]
+
+[ext_resource type="Script" path="res://Scripts/base.gd" id="1_prg0c"]
+[ext_resource type="PackedScene" uid="uid://bcr6bwdyue0yv" path="res://Parts/platform.tscn" id="2_4rxov"]
+[ext_resource type="PackedScene" uid="uid://bvjugvnblsmc3" path="res://Slime/slime.tscn" id="3_nixtl"]
+[ext_resource type="AudioStream" uid="uid://8igj6ygjcx0u" path="res://Music/8bit Bossa.mp3" id="4_v6i6h"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_prg0c")
+
+[node name="Platform" parent="." instance=ExtResource("2_4rxov")]
+position = Vector2(59, 143)
+
+[node name="Platform2" parent="." instance=ExtResource("2_4rxov")]
+position = Vector2(309, 163)
+
+[node name="Platform3" parent="." instance=ExtResource("2_4rxov")]
+position = Vector2(563, 137)
+
+[node name="Slime" parent="." instance=ExtResource("3_nixtl")]
+position = Vector2(313, 64)
+scale = Vector2(2.52, 2.52)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v6i6h")
+autoplay = true
