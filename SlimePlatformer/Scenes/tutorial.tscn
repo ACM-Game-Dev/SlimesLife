@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6audiapxabd7"]
+[gd_scene load_steps=10 format=3 uid="uid://b6audiapxabd7"]
 
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_prg0c"]
 [ext_resource type="PackedScene" uid="uid://bcr6bwdyue0yv" path="res://Parts/platform.tscn" id="2_4rxov"]
 [ext_resource type="PackedScene" uid="uid://bvjugvnblsmc3" path="res://Slime/slime.tscn" id="3_nixtl"]
 [ext_resource type="AudioStream" uid="uid://8igj6ygjcx0u" path="res://Music/8bit Bossa.mp3" id="4_v6i6h"]
-[ext_resource type="Script" path="res://Scenes/ForestBackground.gd" id="5_2j1vr"]
-[ext_resource type="Texture2D" uid="uid://bu8x5t7g4konf" path="res://Magical Road Files/Layers/middle.png" id="6_3pq0b"]
-[ext_resource type="Texture2D" uid="uid://c7tgkk3wl0vvy" path="res://Magical Road Files/Layers/back.png" id="7_s267r"]
+[ext_resource type="Script" path="res://Scripts/parallaxeffect.gd" id="5_3752b"]
+[ext_resource type="Texture2D" uid="uid://bu8x5t7g4konf" path="res://Magical Road Files/Layers/treeline.png" id="6_3pq0b"]
+[ext_resource type="Texture2D" uid="uid://d2ywplqt2jtss" path="res://Magical Road Files/Layers/Background-Ground.png" id="7_a6w5w"]
+[ext_resource type="Texture2D" uid="uid://c7tgkk3wl0vvy" path="res://Magical Road Files/Layers/cloud.png" id="7_s267r"]
+[ext_resource type="Texture2D" uid="uid://6ychbxb6gakb" path="res://Magical Road Files/Layers/Background-Sky.png" id="9_snrq4"]
 
 [node name="Tutorial" type="Node2D"]
 z_as_relative = false
@@ -30,144 +32,388 @@ scale = Vector2(2.52, 2.52)
 stream = ExtResource("4_v6i6h")
 autoplay = true
 
-[node name="ForestBackground" type="Node2D" parent="."]
-script = ExtResource("5_2j1vr")
+[node name="Forest" type="Node2D" parent="."]
+position = Vector2(312, 107)
+script = ExtResource("5_3752b")
+player_path = NodePath("../Slime")
+parallax_strength = 20.0
 
-[node name="Forest" type="Node2D" parent="ForestBackground"]
-position = Vector2(-398, 19)
-
-[node name="Middle" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(0, 75)
+position = Vector2(-1576, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle2" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline1" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(120, 75)
+position = Vector2(-1479, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle3" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline2" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(240, 75)
+position = Vector2(-1382, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle4" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline3" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(360, 75)
+position = Vector2(-1285, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle5" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline4" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(480, 75)
+position = Vector2(-1188, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle6" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline5" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(600, 75)
+position = Vector2(-1091, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle7" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline6" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(720, 75)
+position = Vector2(-994, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle8" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline7" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(840, 75)
+position = Vector2(-897, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle9" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline8" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(960, 75)
+position = Vector2(-800, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle10" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline9" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(1080, 75)
+position = Vector2(-703, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle11" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline10" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(1200, 75)
+position = Vector2(-606, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle12" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline11" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(1320, 75)
+position = Vector2(-509, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Middle13" type="Sprite2D" parent="ForestBackground/Forest"]
+[node name="treeline12" type="Sprite2D" parent="Forest"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(1440, 75)
+position = Vector2(-412, 87)
 scale = Vector2(2, 2)
 texture = ExtResource("6_3pq0b")
 
-[node name="Clouds" type="Node2D" parent="ForestBackground"]
-position = Vector2(-350, 0)
+[node name="treeline13" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(-315, 87)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
 
-[node name="Back" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="treeline14" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(-218, 87)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline15" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(-121, 87)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline16" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(-24, 87)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline17" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(73, 87)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline18" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(170, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline19" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(267, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline20" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(364, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline21" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(461, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline22" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(558, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline23" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(655, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline24" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(752, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline25" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(849, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline26" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(946, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline27" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1043, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline28" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1140, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline29" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1237, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline30" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1334, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline31" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1431, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline32" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1528, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline33" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1625, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline34" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1722, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="treeline35" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(1819, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3pq0b")
+
+[node name="Background-ground" type="Sprite2D" parent="Forest"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(122, 446)
+scale = Vector2(55.0625, 5)
+texture = ExtResource("7_a6w5w")
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2(368, 40)
+script = ExtResource("5_3752b")
+player_path = NodePath("../Slime")
+parallax_strength = 30.0
+
+[node name="Cloud" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(0, -6)
+position = Vector2(-1812, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back2" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 2" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(224, -6)
+position = Vector2(-1588, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back3" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 3" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(448, -6)
+position = Vector2(-1364, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back4" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 4" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(672, -6)
+position = Vector2(-1140, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back5" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 5" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(896, -6)
+position = Vector2(-916, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back6" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 6" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(1120, -6)
+position = Vector2(-692, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
 
-[node name="Back7" type="Sprite2D" parent="ForestBackground/Clouds"]
+[node name="Cloud 7" type="Sprite2D" parent="Clouds"]
 z_index = -100
-position = Vector2(1344, -6)
+position = Vector2(-468, -54)
 scale = Vector2(2, 2)
 texture = ExtResource("7_s267r")
+
+[node name="Cloud 8" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(-244, -54)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 9" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(-20, -54)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 10" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(204, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 11" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(428, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 12" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(652, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 13" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(876, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Cloud 14" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(1100, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Back16" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(1324, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Back17" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(1548, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Back18" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(1772, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Back19" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(1996, -56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_s267r")
+
+[node name="Background-sky" type="Sprite2D" parent="Clouds"]
+z_index = -99
+y_sort_enabled = true
+position = Vector2(92.0001, -349)
+scale = Vector2(806.4, 30)
+texture = ExtResource("9_snrq4")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7tgkk3wl0vvy"
-path="res://.godot/imported/back.png-03ac8ee8d1f8408d0ac5f62e6b551235.ctex"
+uid="uid://6ychbxb6gakb"
+path="res://.godot/imported/Background-Sky.png-61830e1e9a34e5c2b042b7d3253a64e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magical Road Files/Layers/back.png"
-dest_files=["res://.godot/imported/back.png-03ac8ee8d1f8408d0ac5f62e6b551235.ctex"]
+source_file="res://Magical Road Files/Layers/Background-Sky.png"
+dest_files=["res://.godot/imported/Background-Sky.png-61830e1e9a34e5c2b042b7d3253a64e6.ctex"]
 
 [params]
 
