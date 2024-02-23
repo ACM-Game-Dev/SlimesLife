@@ -28,7 +28,7 @@ position = Vector2(563, 137)
 position = Vector2(313, 64)
 scale = Vector2(2.52, 2.52)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_v6i6h")
 autoplay = true
 

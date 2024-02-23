@@ -29,7 +29,7 @@ func _on_animation_finished():
 	play_animation(active_animation)
 
 func _on_animation_looped():
-	print("Looped!")
+	pass
 
 func _on_slime_fall_end():
 	play_animation(ANIMATIONS.land)
