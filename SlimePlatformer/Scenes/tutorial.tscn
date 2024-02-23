@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6audiapxabd7"]
+[gd_scene load_steps=11 format=3 uid="uid://b6audiapxabd7"]
 
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_prg0c"]
 [ext_resource type="PackedScene" uid="uid://bcr6bwdyue0yv" path="res://Parts/platform.tscn" id="2_4rxov"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ywplqt2jtss" path="res://Magical Road Files/Layers/Background-Ground.png" id="7_a6w5w"]
 [ext_resource type="Texture2D" uid="uid://c7tgkk3wl0vvy" path="res://Magical Road Files/Layers/cloud.png" id="7_s267r"]
 [ext_resource type="Texture2D" uid="uid://6ychbxb6gakb" path="res://Magical Road Files/Layers/Background-Sky.png" id="9_snrq4"]
+[ext_resource type="PackedScene" uid="uid://bm8rjay4wlywh" path="res://Parts/wall.tscn" id="10_mryv4"]
 
 [node name="Tutorial" type="Node2D"]
 z_as_relative = false
@@ -417,3 +418,15 @@ y_sort_enabled = true
 position = Vector2(92.0001, -349)
 scale = Vector2(806.4, 30)
 texture = ExtResource("9_snrq4")
+
+[node name="Platform4" parent="." instance=ExtResource("10_mryv4")]
+position = Vector2(-95, 125)
+
+[node name="Platform5" parent="." instance=ExtResource("10_mryv4")]
+position = Vector2(712, 127)
+
+[node name="Platform6" parent="." instance=ExtResource("10_mryv4")]
+position = Vector2(772, -33)
+
+[node name="Platform7" parent="." instance=ExtResource("10_mryv4")]
+position = Vector2(-160, -15)

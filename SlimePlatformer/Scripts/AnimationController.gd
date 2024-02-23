@@ -42,6 +42,7 @@ func _on_slime_fall_end():
 # Horizontal Movement handlers
 
 func _on_slime_move_start():
+	play_animation(ANIMATIONS.move)
 	set_active_animation(ANIMATIONS.move)
 
 func _on_slime_move_end():
