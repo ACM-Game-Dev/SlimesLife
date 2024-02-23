@@ -3,7 +3,8 @@ extends CharacterBody2D
 signal jump_start
 signal fall_start
 signal fall_end
-
+signal move_start
+signal move_end
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -11,6 +12,7 @@ const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var falling = false
+var moving = false
 var facing = 1
 
 
@@ -46,10 +48,16 @@ func handle_movement(delta):
 	elif direction < 0:
 		facing = 0
 	
-	if direction:
+	if direction: # Receiving a movement input
 		velocity.x = direction * SPEED
+		if not falling:
+			move_start.emit()
+			moving = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if not falling:
+			move_end.emit()
+			moving = false
 
 func _physics_process(delta):
 	apply_gravity(delta)
