@@ -9,6 +9,8 @@ signal move_end
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
+var prevVelocity = Vector2.ZERO
+
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var falling = false
@@ -59,6 +61,9 @@ func handle_movement(delta):
 			move_end.emit()
 			moving = false
 
+	if not is_on_floor():
+		velocity.x = lerp(prevVelocity.x,velocity.x,0.2)
+
 func _physics_process(delta):
 	apply_gravity(delta)
 	jump()
@@ -66,3 +71,4 @@ func _physics_process(delta):
 	change_facing()
 	handle_movement(delta)
 	move_and_slide()
+	prevVelocity = velocity
