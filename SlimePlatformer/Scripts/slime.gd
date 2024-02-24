@@ -20,6 +20,8 @@ func jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump_start.emit()
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= 0.5
 
 func check_fall():
 	if velocity.y < 0:
