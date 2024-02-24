@@ -8,6 +8,7 @@ signal move_end
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
+const NUM_JUMPS = 2
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,9 +16,12 @@ var falling = false
 var moving = false
 var facing = 1
 
+var jumps = NUM_JUMPS
+
 
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and jumps > 0:
+		jumps -= 1
 		jump_start.emit()
 		velocity.y = JUMP_VELOCITY
 
@@ -26,6 +30,7 @@ func check_fall():
 		falling = true
 		fall_start.emit()
 	elif is_on_floor() and falling:
+		jumps = NUM_JUMPS
 		falling = false
 		fall_end.emit()
 	

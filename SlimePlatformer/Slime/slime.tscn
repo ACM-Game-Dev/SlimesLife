@@ -150,7 +150,7 @@ shape = SubResource("CircleShape2D_25wi4")
 unique_name_in_owner = true
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_m8am5")
-animation = &"falling"
+animation = &"jump_start"
 script = ExtResource("4_dy2qo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -163,10 +163,15 @@ position = Vector2(0, -4)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_e4li5")
 
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="fall_end" from="." to="AnimationController" method="_on_slime_fall_end"]
+[connection signal="fall_start" from="." to="." method="_on_fall_start"]
 [connection signal="fall_start" from="." to="AnimationController" method="_on_slime_fall_start"]
 [connection signal="jump_start" from="." to="AnimationController" method="_on_slime_jump_start"]
 [connection signal="move_end" from="." to="AnimationController" method="_on_slime_move_end"]
 [connection signal="move_start" from="." to="AnimationController" method="_on_slime_move_start"]
 [connection signal="animation_finished" from="AnimationController" to="AnimationController" method="_on_animation_finished"]
 [connection signal="animation_looped" from="AnimationController" to="AnimationController" method="_on_animation_looped"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
