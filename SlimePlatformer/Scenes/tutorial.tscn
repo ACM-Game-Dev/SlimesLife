@@ -415,8 +415,8 @@ texture = ExtResource("7_s267r")
 [node name="Background-sky" type="Sprite2D" parent="Clouds"]
 z_index = -99
 y_sort_enabled = true
-position = Vector2(92.0001, -349)
-scale = Vector2(806.4, 30)
+position = Vector2(92.0001, -427.5)
+scale = Vector2(806.4, 61.4)
 texture = ExtResource("9_snrq4")
 
 [node name="Platform4" parent="." instance=ExtResource("10_mryv4")]
